@@ -1,0 +1,195 @@
+body {
+  padding-top: 20px;
+}
+.card-image{
+  position: absolute;
+  top: 30px;
+  width: 100px;
+}
+.card{
+  width: 400px;
+  height: 220px;
+}
+#wrapper {
+  width: 100%;
+}
+.section {
+    float:left;
+    height:270px;
+    margin-left:10px;
+    width:420px;
+}
+.col-md-2{
+  float: left;
+  width: 100%;
+  height: 100px;
+}
+.searchLabel{
+  float: left;
+  width: 100px;
+  font-size: 24pt;
+}
+
+.searchInput{
+  text-align: center;
+  margin-left: 15px;
+  float: left;
+  width: 25%;
+}
+h1 {
+  border-bottom: 1px solid gray;
+}
+.phones {
+  list-style: none;
+}
+.phones li {
+  clear: both;
+  height: 115px;
+  padding-top: 15px;
+}
+.thumb {
+  float: left;
+  height: 100px;
+  margin: -0.5em 1em 1.5em 0;
+  padding-bottom: 1em;
+  width: 100px;
+}
+.phone {
+  background-color: white;
+  float: left;
+  height: 400px;
+  margin-bottom: 2em;
+  margin-right: 3em;
+  padding: 2em;
+  width: 400px;
+}
+.phone-thumbs {
+  list-style: none;
+  margin: 0;
+}
+
+.phone-thumbs img {
+  height: 100px;
+  padding: 1em;
+  width: 100px;
+}
+
+.phone-thumbs li {
+  background-color: white;
+  display: inline-block;
+  margin: 1em;
+}
+
+.specs {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.specs dt {
+  font-weight: bold;
+}
+
+.specs > li {
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+}
+
+.specs > li > span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.main{
+  margin-left: 10%;
+  width: 85%;
+}
+.userInfo{
+  width: 15%;
+}
+.btn-account{
+  position: absolute;
+  left: 85%;
+}
+.btn-edit{
+  margin-right: 30px;
+}
+.btn-delete{
+
+}
+.btn-update{
+  position: absolute;
+  left: 80%;
+  top: 90%:
+}
+.btn-cancel{
+  position: absolute;
+  left: 10%;
+}
+.btn-delete-p{
+  position: absolute;
+  right: 10%;
+}
+.container-post{
+  float: left;
+  width: 50%;
+}
+.form-control{
+  height: 200px;
+}
+.form-signin{
+  top: 20%;
+  min-width: 200px;
+  position: absolute;
+  left: 40%;
+  width: 20%;
+}
+.btn-sub{
+  position: absolute;
+  left: 30%;
+  width: 40%;
+}
+.modal{
+  position: absolute;
+  top: 20%;
+  height: 300px;
+}
+.list-group-item{
+  color: black;
+}
+.review-label{
+}
+.btn-close{
+  float: right;
+}
+.btn-close_t{
+  float: right;
+}
+.basket-image{
+    width: 100px;
+    float: left;
+}
+.basket-products{
+  height: 100px;
+}
+.basket-name{
+  font-size: 16pt;
+}
+.btn-basket{
+  width: 15%;
+  min-width: 150px;
+  position: absolute;
+  left: 80%;
+  bottom: 50px;
+}
+.lead{
+  font-size: 20pt;
+}
+.username{
+  position: absolute;
+  left: 30%;
+  width: 600px;
+  height: 50px;
+  font-size: 20pt;
+}

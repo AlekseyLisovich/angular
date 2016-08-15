@@ -1,0 +1,34 @@
+{
+  "name": "angular-phonecat",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A tutorial application for AngularJS",
+  "repository": "https://github.com/angular/angular-phonecat",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "http-server": "^0.9.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.8",
+    "main-bower-files": "^2.13.1",
+    "merge-stream": "^1.0.0",
+    "protractor": "^3.2.2",
+    "run-sequence": "^1.2.2"
+  },
+  "scripts": {
+    "start": "http-server ./frontend -a localhost -p 8081 -c-1"
+  }
+}

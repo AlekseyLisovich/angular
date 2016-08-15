@@ -1,0 +1,67 @@
+<div ng-controller="userName" id = "check">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <p>
+                    <div class="searchLabel">Search:</div>
+                    <div class="searchInput">
+                        <input ng-model="$ctrl.query" />
+                    </div>
+                </p>
+            </div>
+            <!-- Modal Trigger -->
+              <a class="waves-effect waves-light btn red darken-2 modal-trigger btn-basket" ng-show="isLogIn()" ng-click="getProducts()" href="#modal1" ><i class="material-icons left">shopping_cart</i>Basket</a>
+
+              <!-- Modal Structure -->
+              <div  id="modal1" class="modal basket">
+                <div class="modal-content">
+                  <h4>Order Confirmation</h4>
+                  <p>Are you confirm your order ?</p>
+                </div>
+                <div ng-controller="phonePost">
+                <ul>
+                  <div class="list-group" ng-repeat="product in products">
+                    <div class = "basket-products">
+                    <div class = "basket-image"><img ng-src="{{product.imageUrl}}" style = "width: 100px;"/></div>
+                    <p class = "basket-name">{{product.name}}</p>
+                    <p >{{product.snippet}}</p>
+                  </div>
+                  </li>
+                </ul>
+              </div>
+
+                <div class="modal-footer">
+                  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="Materialize.toast('Сonfirmed', 2000)">Agree</a>
+                  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="Materialize.toast('Rejected', 2000)">Disagree</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-10">
+                <!--Body content-->
+                <div id="wrapper">
+                    <div class="section" ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+                        <div class="col s12 m7">
+                            <div class="card horizontal">
+                                <div class="card-image">
+                                    <a href="#!/phones/{{phone.id}}">
+                                        <img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
+                                    </a>
+                                </div>
+                                <div class="card-stacked">
+                                    <div class="card-content">
+                                        <a ng-href="#!/phones/{{phone.id}}">{{phone.name}}</a>
+                                        <p>{{phone.snippet}}</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a href="#">More details</a>
+                                        <a class="waves-effect waves-light btn" ng-show="isLogIn()" ng-click="addProducts(phone)">Buy</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
