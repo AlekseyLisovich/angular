@@ -9,6 +9,10 @@ angular.module('home', ['ngRoute', 'firebase', 'auth'])
     }])
 
 .controller('HomeCtrl', ['$scope', 'singIn', function($scope, singIn) {
+  $scope.user = {
+    email: '',
+    password: ''
+  }
     $scope.signIn = function() {
         singIn.authorization($scope.user.email, $scope.user.password);
     }

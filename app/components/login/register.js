@@ -12,6 +12,10 @@ angular.module('register', ['ngRoute', 'firebase', 'auth'])
 
 
 .controller('RegisterCtrl', ['$scope', 'singOut', function($scope, singOut) {
+  $scope.user = {
+    email: '',
+    password: ''
+  }
     $scope.singOut = function() {
         singOut.registration($scope.user.email, $scope.user.password);
     }
