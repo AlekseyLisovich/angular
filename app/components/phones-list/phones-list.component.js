@@ -1,7 +1,7 @@
 'use strict';
 
 // Register `phoneList` component, along with its associated controller and template
-angular.module('phonesList', [])
+angular.module('phonesList', ['ngRoute', 'firebase', 'cartService'])
 
 .component('phonesList', {
     templateUrl: '/partials/components/phones-list/phones-list.template.html',
@@ -23,7 +23,7 @@ angular.module('phonesList', [])
     });
 }])
 
-.controller('userName', ['$scope', '$firebase', '$location', 'CommonProp', function($scope, $firebase, $location, CommonProp) {
+.controller('userCart', ['$scope', '$firebase', '$location', 'UserData', 'cart', function($scope, $firebase, $location, CommonProp, cart) {
     $scope.userService = CommonProp;
 
     $scope.isLogIn = function() {
@@ -33,50 +33,18 @@ angular.module('phonesList', [])
             return true;
         }
     }
-
     $scope.products = [];
+
     $scope.addProducts = function(data) {
-        $scope.products.push(data);
-        localStorage.prod = JSON.stringify($scope.products);
-        console.log($scope.products);
+        cart.addProducts(data);
     }
 
-    $scope.getProducts = function(){
-    $scope.products = JSON.parse(localStorage.prod);
-  }
-
-    $scope.AddProducts = function(data) {
-
-        var firebaseObj = new Firebase("https://blistering-heat-2473.firebaseio.com");
-        var fb = $firebase(firebaseObj);
-
-        fb.$push({
-            img: data.imageUrl,
-            name: data.name,
-            info: data.snippet,
-            emailId: CommonProp.getUser()
-        }).then(function(ref) {
-            console.log(ref);
-        }, function(error) {
-            console.log("Error:", error);
-        });
+    $scope.getProducts = function() {
+        $scope.products = cart.getProducts();
     }
 
-    $scope.confirmDelete = function(id) {
-        var fb = new Firebase("https://blistering-heat-2473.firebaseio.com/Articles/" + id);
-        var article = $firebase(fb);
-        $scope.postToDelete = article.$asObject();
-        $('#deleteModal').modal();
-    }
-
-    $scope.deletePost = function() {
-        var fb = new Firebase("https://blistering-heat-2473.firebaseio.com/Articles/" + $scope.postToDelete.$id);
-        var article = $firebase(fb);
-        article.$remove().then(function(ref) {
-            $('#deleteModal').modal('hide');
-        }, function(error) {
-            console.log("Error:", error);
-        });
+    $scope.addProducts = function(data) {
+        cart.addProducts(data);
     }
 
     // for modal

@@ -10,6 +10,9 @@ var app = angular.module('phonesApp', [
     'addPost',
     'welcome',
     'headerInfo',
+    'auth',
+    'userService',
+    // 'cartService',
 ]);
 
 app.config(['$locationProvider', '$routeProvider',

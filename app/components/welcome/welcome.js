@@ -9,7 +9,7 @@ angular.module('welcome', ['ngRoute'])
     });
 }])
 
-.controller('WelcomeCtrl', ['$scope', '$firebase', 'CommonProp', function($scope, $firebase, CommonProp) {
+.controller('WelcomeCtrl', ['$scope', '$firebase', 'UserData', function($scope, $firebase, CommonProp) {
     $scope.username = CommonProp.getUser();
     var firebaseObj = new Firebase("https://blistering-heat-2473.firebaseio.com/Articles");
 
